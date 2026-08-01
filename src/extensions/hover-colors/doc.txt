@@ -1,0 +1,49 @@
+The Hover Colors extension lets you change how a block looks when a visitor moves their mouse over it. You can set a different text color, background color, or border color on hover, creating interactive feedback that makes it clear which elements are clickable or interactive. This is perfect for buttons, cards that link to other pages, and any element you want to feel more interactive and engaging.
+
+How to use it
+
+1. Select a block that supports text color. This includes blocks like Button, Paragraph, Heading, Group (when it has text), and other text-based blocks. Not all blocks support hover colors, so if you don't see the option, that block may not be compatible.
+
+2. In the right sidebar, open the Styles tab and then the Color panel. This is where color options are located.
+
+3. Look for the Hover Colors section within the Color panel. It may be collapsed by default, so click to expand it and see the hover color controls.
+
+4. Set hover text color: Click on the text color picker and choose a color for the text when the mouse is over the block. This should contrast well with your hover background color (if you set one). For example, if your normal text is dark grey, you might make hover text white for better contrast against a colored background.
+
+5. Set hover background color (optional): Click on the background color picker and choose a background color for the hover state. This is where you can create the most dramatic hover effect. For example, if your normal background is light grey, you might make the hover background your brand color. This creates a clear visual indication that the element is interactive.
+
+6. Set hover border color (optional): If your block uses a border, you can change its color on hover too. This works well for outlined buttons or cards with borders. You might change from a light border to a darker, more prominent border on hover.
+
+7. Adjust transition speed (if available): Some setups allow you to choose how quickly the colors change between normal and hover states. This is measured in seconds or milliseconds. Shorter times (0.2–0.3 seconds) feel snappy and immediate. Slightly longer times (0.4–0.6 seconds) feel smoother and more polished. Very long transitions (over 1 second) can feel sluggish.
+
+8. Save your changes and test on the front end. Move your mouse over the block to see the hover effect in action. Note that hover effects only work with a mouse or trackpad—on touch devices like phones and tablets, there is no hover state.
+
+If you don't see Hover Colors for a particular block, that block may not support it. Some simple blocks or blocks without color support won't have this option.
+
+Settings and options
+
+- Hover text color: Change the text color when the mouse is over the block. This should provide good contrast against the hover background color. Common patterns include: light text on dark backgrounds becoming dark text on light backgrounds, or maintaining the same text color but changing the background for contrast.
+
+- Hover background color: Change the background color on hover. This is the most common and effective hover effect. You can go from a light background to a darker one, from a neutral color to your brand color, or create any color transition that fits your design. This creates a clear visual indication that the element is interactive.
+
+- Hover border color: Change the border color on hover (if the block has a border). This works well for outlined buttons or cards. You might change from a subtle border to a more prominent one, or from a neutral color to a brand color.
+
+- Transition speed: Control how quickly the colors change between normal and hover states. Faster transitions (0.2–0.3s) feel immediate and snappy. Slower transitions (0.4–0.6s) feel smoother and more polished. The transition creates a smooth color change rather than an instant switch, which feels more professional.
+
+Tips
+
+- Keep contrast high: Hover colors should still have good contrast with text for readability. If you're changing both text and background colors, ensure there's enough contrast between them. Use accessibility tools to check contrast ratios if needed.
+
+- Use hover to signal interactivity: If something is clickable, a hover change helps users understand they can click. This is especially important for custom-styled elements that don't look like traditional links or buttons.
+
+- Stay consistent: Use a similar hover pattern for all primary buttons (for example, always slightly darker on hover, or always transitioning to the same brand color). Consistency helps users understand your interface and creates a more polished, professional feel.
+
+- Combine with Wrapper Link: Use Hover Colors on clickable cards (created with the Wrapper Link extension) to make it clear the entire card is interactive. Change the background color and maybe the heading text color on hover to create a cohesive interactive experience.
+
+- Test the transition: Make sure the transition speed feels right—not too fast (jarring) or too slow (feels unresponsive). The default is usually good, but adjust based on your design needs.
+
+- Consider your color palette: Hover colors should fit within your overall color scheme. They don't have to be dramatically different—sometimes a subtle darkening or lightening is enough to indicate interactivity.
+
+- Remember touch devices: Hover effects don't work on touch devices, so make sure interactive elements are clearly identifiable even without hover (through styling, placement, or other visual cues).
+
+- Don't overdo it: Subtle hover effects are often more effective than dramatic ones. A slight color change is usually enough to indicate interactivity without being distracting.

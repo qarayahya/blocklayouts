@@ -1,0 +1,57 @@
+The Effects extension lets you add simple entrance or scroll-based animations to your blocks. Make a heading fade in as you scroll, slide a section in from the side, or add a gentle animation to key call-to-action areas so they stand out. These animations trigger when the block comes into view, creating a dynamic, engaging experience without being overwhelming. This is all done with visual controls—no code required.
+
+How to use it
+
+1. Select a block you want to animate. This can be any block type, but effects work particularly well with larger blocks like Groups, Columns, Headings, Images, or hero sections. Smaller blocks can be animated too, but the effect is more noticeable on larger elements.
+
+2. In the right sidebar, go to the Styles tab where all styling options are located.
+
+3. Look for the Effects panel. It may be collapsed by default, so click to expand it and see the animation options.
+
+4. Turn on the main animation toggle or enable the animation option. This activates the animation system for this block.
+
+5. Choose an animation style from the available presets. Common options include:
+   - Fade: The block fades in from transparent to visible
+   - Slide: The block slides in from a direction (left, right, top, or bottom)
+   - Zoom: The block scales up or down as it appears
+   - Other variations depending on your version
+
+6. Try a few different styles and see what feels best for your design. Each animation has a different character—fade is subtle and professional, slide is more dynamic, zoom creates emphasis.
+
+7. Fine-tune the timing: Adjust the Duration slider to control how long the animation lasts. Short durations (0.3–0.6 seconds) feel snappy and modern. Longer durations (1–2 seconds) feel more dramatic but can feel slow if overused.
+
+8. Set the Delay if you want the animation to wait before starting. Use a slight delay (0.1–0.3 seconds) to stagger multiple blocks on the page, creating a cascading effect where blocks animate one after another.
+
+9. Set when it should run. Most setups allow you to choose when the block animates, typically when it scrolls into view. This means the animation only plays when the user scrolls the block into the visible area of the screen.
+
+10. Save your changes and view the page on the front end. Scroll to see the animation in action. Note that animations typically only play on the front end, not in the editor preview.
+
+If you do not see the Effects panel, it may have been turned off in the Blocklayouts Preferences screen. Check the preferences to enable it.
+
+Settings and options
+
+- Animation style: Pick from available presets such as fade, slide, zoom, and others. Each style has a different visual character. Fade is the most subtle and works well for most content. Slide creates movement and draws attention. Zoom emphasizes the content. Try a few and see what feels best for your design and content type.
+
+- Duration: Control how long the animation lasts, measured in seconds. Short durations (0.3–0.6 seconds) feel snappy, modern, and keep the site feeling fast. They're good for most content. Longer durations (1–2 seconds) feel more dramatic and can create emphasis, but can feel slow if overused. Very long durations (over 2 seconds) are rarely needed and can make the site feel sluggish.
+
+- Delay: Control how long to wait before the animation starts, measured in seconds. Use a slight delay (0.1–0.3 seconds) to stagger multiple blocks on the page. For example, if you have three feature columns, set delays of 0s, 0.1s, and 0.2s to create a cascading effect where they animate one after another. This creates visual interest without being overwhelming. Longer delays (0.5s+) are less common but can be used for dramatic effect.
+
+- Trigger: Choose when the block animates. The most common option is "on scroll into view", which means the animation plays when the user scrolls the block into the visible area of the screen. Some setups may offer other trigger options. The scroll-into-view trigger is recommended as it creates a natural, engaging experience as users read through the page.
+
+Tips
+
+- Less is more: Only animate important sections like hero areas, key features, or call-to-action sections. Avoid animating every single block on the page—this can feel distracting and overwhelming. Choose 2–4 key elements per page to animate.
+
+- Keep animations quick: Short animations (under 1 second) feel modern and keep the site feeling fast. They don't interrupt the reading flow. Long animations can feel slow and may cause users to scroll past before the animation finishes.
+
+- Think accessibility: Avoid fast or overly dramatic animations that might be uncomfortable for some visitors. Some users have motion sensitivity, so subtle animations are generally better. Consider providing a way to reduce motion if possible.
+
+- Stagger multiple blocks: Animate each feature column or section with a small delay between them (0s, 0.1s, 0.2s) to create a staggered appearance. This creates visual interest while still feeling smooth and coordinated.
+
+- Match animation to content: Use fade for text and subtle content, slide for dynamic sections, and zoom for emphasis or call-to-action areas.
+
+- Test on different devices: Animations can feel different on mobile vs desktop. Some animations may be too subtle on small screens or too dramatic. Preview on multiple devices.
+
+- Don't animate critical information: Important content should be visible immediately, not hidden behind an animation. Use animations to enhance, not to reveal essential information.
+
+- Consider the user's journey: Animations that trigger on scroll work well because they don't delay the initial page load. Users see content immediately, and animations enhance the experience as they scroll.

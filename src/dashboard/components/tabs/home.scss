@@ -1,0 +1,22 @@
+@use "@wordpress/base-styles/colors";
+
+.blocklayouts-dashboard__home {
+	display: flex;
+	gap: 32px;
+
+	&-content {
+		flex: 1;
+	}
+
+	&-sidebar {
+		width: 360px;
+		&-item {
+			padding: 24px;
+			background-color: #f5f5f7;
+			border-radius: 8px;
+			a {
+				text-decoration: none !important;
+			}
+		}
+	}
+}

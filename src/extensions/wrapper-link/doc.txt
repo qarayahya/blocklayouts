@@ -1,0 +1,56 @@
+The Wrapper Link extension lets you make an entire block (usually a Group block) clickable as a single link. Instead of just linking a button or a piece of text, you can turn a whole card (image + heading + text) into one big clickable area or make sections that behave like large buttons. This creates a more intuitive user experience where visitors can click anywhere on a card to navigate, rather than having to find a specific button or link within it.
+
+How to use it
+
+1. Create a card using a Group block: Add a Group block to your page. Inside the Group, add the content you want to make clickable. A typical card might include:
+   - An Image block (e.g. product image, service image, or featured image)
+   - A Heading block (title)
+   - A Paragraph block (short description or excerpt)
+   - Optionally, other blocks like buttons, icons, or additional text
+
+2. Arrange the content inside the Group block as you want it to appear. Style it with colors, spacing, borders, and other design options to create the card appearance you want.
+
+3. Select the outer Group block in the editor. This is important—you need to select the Group block itself, not any of the blocks inside it. If you're having trouble selecting it, use the breadcrumb navigation at the top of the editor to see the block hierarchy and click on the Group block level.
+
+4. In the right sidebar, look for the Wrapper Link section. It may be in the block settings or in an Advanced panel, depending on your setup. The section should be clearly labeled.
+
+5. Enter the URL you want the whole Group to link to. This can be:
+   - An internal page or post on your site (e.g. /about, /products/item-name)
+   - An external website (e.g. https://example.com)
+   - An anchor link to a section on the same page (e.g. #section-name)
+
+6. Optionally configure additional link settings:
+   - Open in new tab: Check this if you want the link to open in a new browser tab. This is recommended for external links but usually not needed for internal navigation.
+   - Rel options: Set relationship attributes such as "nofollow" if needed. This is useful for SEO purposes on external links or sponsored content.
+
+7. Save your changes and test on the front end. Move your mouse over the card and you should see the cursor change to a pointer, indicating it's clickable. Click anywhere on the card—the image, text, background, or any area—and it should navigate to the URL you set.
+
+Wrapper Link is most useful with Group blocks that act as cards or sections, and areas of the page where multiple elements together should link to the same place. Common use cases include product cards, blog post cards, service cards, team member cards, or any content where the entire card should be clickable.
+
+Settings and options
+
+- URL: Enter the link destination for the entire block. This is the most important setting—without a URL, the block won't be clickable. You can use relative URLs for internal links (e.g. /about) or full URLs for external links (e.g. https://example.com). The URL should be valid and point to the destination you want.
+
+- Open in new tab: Choose whether the link opens in a new browser tab when clicked. This is useful for external links where you want users to stay on your site, or for links to documents or other resources. For internal navigation, you typically want the link to open in the same tab to maintain the user's browsing flow.
+
+- Rel options: Set relationship attributes for the link. The most common is "nofollow", which tells search engines not to follow the link. This is useful for external links, sponsored content, or user-generated content where you don't want to pass SEO value to the linked page. Other rel attributes may be available depending on your setup.
+
+Tips
+
+- Combine with Hover Colors: Change background or text color on hover so visitors clearly see that the entire card is clickable. This provides important visual feedback. For example, darken the background slightly or change the heading color on hover. This makes it obvious that the card is interactive.
+
+- Add a subtle shadow or border: Use the Group's style settings to give cards a slight border radius and drop shadow to make them feel like "tiles" or "cards". This visual treatment helps users understand that the card is a distinct, clickable element. Rounded corners and shadows are common design patterns for clickable cards.
+
+- Use a consistent pattern: If one card is fully clickable, make all cards in that section behave the same way. Consistency helps users understand your interface. If some cards are clickable and others aren't, it can be confusing. Create a clear, consistent pattern across similar content.
+
+- Always make it clear that the whole block is clickable: Use hover changes (via Hover Colors extension), leave enough padding so it feels like a button or card (not normal text), and consider adding visual cues like shadows or borders. The entire card should feel interactive, not just a small link within it.
+
+- Avoid nesting too many interactive elements: If you already have separate buttons inside the Group, think carefully about whether the whole card also needs to be clickable. Having both a clickable card and a button inside it can be confusing—users might not know which one to click. In most cases, if the whole card is clickable, you don't need additional buttons inside it. However, if you do have both, make sure they link to different destinations or serve different purposes.
+
+- Test the clickable area: Make sure the entire card area is clickable, not just certain parts. Sometimes overlapping elements or absolute positioning can interfere. Test by clicking different areas of the card to ensure they all work.
+
+- Consider accessibility: Ensure that keyboard users can navigate to and activate the link. Screen reader users should be able to understand that the entire card is a link. The link should have descriptive text or an accessible name.
+
+- Use descriptive URLs or link text: Even though the entire card is clickable, make sure the context makes it clear where the link goes. The heading or main text should give users an idea of the destination.
+
+- Mobile considerations: On touch devices, the entire card area should be easily tappable. Make sure there's enough padding and that the card isn't too small to tap comfortably on mobile devices.

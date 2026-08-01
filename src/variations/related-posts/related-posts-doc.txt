@@ -1,0 +1,108 @@
+Related Posts Variation
+=======================
+
+What this variation does
+------------------------
+The **Related Posts** variation quickly creates a section that shows posts related to the one a visitor is currently reading.
+
+It uses WordPress taxonomies (for example, **Categories** and **Tags**) to find posts that are similar.
+
+Typical use:
+
+- At the bottom of a single blog post page.
+- On a single post template in a block theme.
+
+[add screenshot here: “Related Posts” block inserted below a single post’s content]
+
+Where to find it
+----------------
+1. Edit a **single post template** (in a block theme) or a post layout where you want to show related posts.
+2. Open the block inserter.
+3. Search for **“Related Posts”** under Query or Query Loop variations.
+4. Insert the **Related Posts** variation.
+
+What you get when you insert it
+-------------------------------
+When you insert the Related Posts variation, it:
+
+- Adds a **Query** block already configured to show related posts.
+- Includes a **Post Template** displaying:
+  - Featured image
+  - Post title
+- Uses a grid layout (for example, 3 columns) so related posts appear in a neat row or grid.
+- Includes a “No results” block if no related posts are found.
+
+You can freely customize this layout once it’s inserted.
+
+Choosing which taxonomies to use
+--------------------------------
+Related posts are determined by matching taxonomies. For example:
+
+- Posts that share the same **Category**.
+- Posts that share the same **Tag**.
+- Or other custom taxonomies (if your site uses them).
+
+To choose which taxonomies matter:
+
+1. Click the **Related Posts Query** block (the outer block that wraps the grid).
+2. Open the block settings in the right sidebar.
+3. Look for a **Related Posts** or **Filter by Taxonomies** panel.
+4. Use the input (often a token field) to add the taxonomies you care about:
+   - Start typing “Categories”, “Tags”, or another taxonomy name.
+   - Select the ones you want.
+5. Save your changes.
+
+When a visitor views a post, the Related Posts section will try to find other posts that share those taxonomies.
+
+[add screenshot here: Inspector controls showing a taxonomy selection field for Related Posts]
+
+Customizing the layout
+----------------------
+You can customize the inner layout just like any other Query Loop:
+
+1. Click inside the Related Posts section and select the **Post Template** block.
+2. Add or remove blocks inside the template:
+   - Add **Post Excerpt** for a short summary.
+   - Add **Post Date** or **Post Author**.
+   - Wrap items in a Group to add background colors or padding.
+3. Adjust the grid layout:
+   - Change the number of columns (for example, from 3 to 2 if you want bigger cards).
+   - Adjust spacing and alignment in the layout settings.
+
+Ideas for using Related Posts
+-----------------------------
+- **Classic “You may also like” section**
+  - Place Related Posts directly under the main content of each blog post.
+  - Show 3 related posts with image and title.
+
+- **Category‑focused suggestions**
+  - Configure the variation to use **Categories** only.
+  - Visitors reading a post in a category will see other posts from that same category.
+
+- **Tag‑based discovery**
+  - For sites using many tags, use **Tags** as the main taxonomy.
+  - This can surface posts that are connected by topic even if they are in different categories.
+
+Best practices
+--------------
+- Ensure posts are well‑categorized and tagged:
+  - The better your taxonomy setup, the more relevant your related posts will be.
+
+- Keep the layout simple:
+  - Use a clear image, title, and maybe a short excerpt.
+  - Avoid overloading the section with too much text.
+
+- Match your theme:
+  - Style the Related Posts grid (colors, typography, spacing) so it feels like a natural part of your theme.
+
+Troubleshooting
+---------------
+- **No related posts appear**
+  - Check that the current post actually shares categories/tags with other posts.
+  - Try broadening your taxonomies (for example, use Categories instead of a very specific custom taxonomy).
+
+- **The section shows posts that don’t feel related**
+  - Review your site’s categories and tags for consistency.
+  - Limit the Related Posts taxonomy selection to the ones that make the most sense (for example, only Categories).
+
+

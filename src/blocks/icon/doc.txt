@@ -1,0 +1,49 @@
+The Icon block lets you add a single, clean icon to your page or post. You can use it for feature lists, service highlights, social or brand icons, and simple decorative elements. Pick from a built-in icon library with hundreds of options, paste your own custom SVG code, control the size and colors, and turn the icon into a clickable link. The Icon block is perfect for adding visual interest to your content without cluttering the page with large images.
+
+How to add this block
+
+1. Open the editor and navigate to the page or post where you want to add an icon.
+2. Click the + button (Add block) in the editor toolbar or within an existing block.
+3. Search for "Icon" in the block inserter and click to insert it.
+4. Once inserted, you'll see a placeholder icon in the editor. In the right sidebar under Settings, you'll see a small preview of the current icon (or a placeholder) and a "Browse" button.
+5. Click the icon preview or the "Browse" button to open the icon picker dialog.
+6. Browse through the icon library categories or use the search function to find the icon you want.
+7. Click on an icon to select it and close the picker. The icon will appear in your block.
+8. Use the Icon Size (px) slider in the sidebar to adjust the size. Start with a moderate size (around 24-48px) and adjust based on your design needs.
+9. Use the block toolbar alignment buttons to position the icon left, center, or right within its container.
+
+How to style it
+
+Use the style panels in the sidebar to match the icon to your site's design:
+
+- Color: Change the icon color to match your brand palette. You can set a solid color or use a gradient. Optionally set a background color behind the icon to create a badge or button-like appearance. The background color works well with padding to create a colored circle or square behind the icon.
+
+- Border: Add rounded corners (border radius) to create a circle or pill shape around the icon. This is especially effective when combined with a background color. Adjust border color and width to create outlines or frames around the icon. You can create a simple outline by setting a border width and choosing a contrasting color.
+
+- Spacing: Adjust padding to control space around the icon inside its container. More padding creates more breathing room and makes the icon feel less cramped. Adjust margin to control space between the icon and other blocks. Use top and bottom margins to separate the icon from content above and below, and left/right margins for horizontal spacing.
+
+- Shadow: Add a light shadow to make the icon stand out from the background. Use subtle shadows for a professional look, or stronger shadows for more dramatic effect. Shadows work particularly well when the icon has a background color.
+
+Settings and options
+
+- Icon selection: Browse the built-in icon library organized by categories, or use the search function to quickly find specific icons. If you have custom SVG code from a designer or brand guidelines, you can paste it directly into the custom SVG field. The custom SVG option gives you complete control over the icon appearance.
+
+- Icon size: Control the size of the icon using the slider (measured in pixels). Common sizes range from 16px (very small, for inline use) to 128px (large, for hero sections). Most icons work well between 24px and 64px. Remember that larger icons may need more spacing around them.
+
+- Alignment: Position the icon left, center, or right using the block toolbar alignment buttons. Left alignment is common for icons that appear before text. Center alignment works well for standalone icons or icons in feature sections. Right alignment is less common but useful for specific design layouts.
+
+- Linking: Click the link icon in the block toolbar to make the icon clickable. Enter a URL (internal page, external website, or anchor link). Choose whether to open in a new tab, which is recommended for external links. You can also set link relationship attributes like "nofollow" if needed. When an icon is linked, visitors will see a pointer cursor when hovering over it.
+
+Tips
+
+- Use icons in a 3-column layout to create feature lists with an icon at the top of each column. This creates a clean, organized look that's easy to scan. Add a heading and short description below each icon for maximum impact.
+
+- Create a social follow area by inserting several Icon blocks in a row and adding links to each. Use social media icons and link each to the corresponding social profile. Consider using a Group block with flexbox layout to keep them evenly spaced.
+
+- Combine with the Button block and Inline Icon feature to place icons inside button text. This creates more visually interesting call-to-action buttons.
+
+- For custom brand icons, ensure your SVG code is clean and doesn't include unnecessary attributes. The SVG should be optimized for web use.
+
+- When using icons with background colors, make sure there's enough contrast between the icon color and background color for accessibility.
+
+- Consider the context: small icons work well inline with text, while larger icons are better for standalone sections or hero areas.
