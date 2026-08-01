@@ -3,7 +3,7 @@ Contributors:      blocklayouts, qarayahya
 Tags:              gutenberg, blocks, patterns, block editor, custom blocks,
 Tested up to:      6.9
 Requires at least: 6.5
-Stable tag:        0.2.0
+Stable tag:        0.2.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -135,6 +135,10 @@ For premium support options, please visit [our website](https://blocklayouts.com
 
 
 == Changelog ==
+
+= 0.2.1 - 2026-08-01 =
+
+- Fixed: Pattern preview thumbnail now displays at full width with auto height and centered
 
 = 0.2.0 - 2026-08-01 =
 
