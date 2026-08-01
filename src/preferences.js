@@ -115,17 +115,6 @@ export const ADDITIONAL_CSS_EXTENSIONS = [
 		defaultValue: true,
 		icon: code,
 	},
-	{
-		name: "custom-css",
-		preferenceKey: "customCss",
-		title: __("Custom CSS", "blocklayouts"),
-		description: __(
-			"Write and apply your own custom CSS code over block styling.",
-			"blocklayouts",
-		),
-		defaultValue: true,
-		icon: code,
-	},
 ];
 
 export const EFFECTS_EXTENSIONS = [

@@ -48,6 +48,7 @@ export function registerAdditionalCSSAttributes(settings, name) {
 				overflowHidden: {
 					type: "boolean",
 				},
+				// Retained for backward compatibility with the removed Custom CSS feature.
 				customCSS: {
 					type: "string",
 				},

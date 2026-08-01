@@ -25,7 +25,6 @@
 
 - **Color Controls** - Enhanced color management with hover effects
 - **Effects Controls** - Animation, transforms, and visual effects
-- **Custom CSS** - Add custom CSS with responsive breakpoints (`@mobile`, `@tablet`, `@desktop`)
 - **Link Controls** - Add link functionality to core/group block
 - **Icon Button** - Enable icon selection and positioning for core/button block
 
@@ -58,7 +57,6 @@ Blocklayouts includes access to our [pattern library](https://blocklayouts.com/p
 
 - **Quick Pattern Insertion** - Find and insert patterns in seconds, not minutes
 - **Block Extensions** - Enhance existing blocks without learning new interfaces
-- **Custom CSS Support** - Advanced styling without leaving the editor
 
 ## Requirements
 
@@ -105,7 +103,7 @@ Blocklayouts is specifically designed for the Gutenberg block editor. While it m
 
 ### Do I need coding knowledge to use this plugin?
 
-Not at all! Blocklayouts is designed for users of all skill levels. However, the Custom CSS feature allows advanced users to add their own styling when needed.
+Not at all! Blocklayouts is designed for users of all skill levels.
 
 ### Is there support available?
 

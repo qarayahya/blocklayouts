@@ -19,7 +19,6 @@ import { getBlockType } from "@wordpress/blocks";
 import Position from "./controls/position";
 import ZIndex from "./controls/z-index";
 import Transform from "./controls/transform";
-import CustomCSS from "./controls/custom-css";
 import Opacity from "./controls/opacity";
 import OverflowHidden from "./controls/overflow-hidden";
 import BackgroundBlur from "./controls/background-blur";
@@ -91,30 +90,6 @@ const generateInlineStyles = (additionalCSS, isEditor = false) => {
 };
 
 /**
- * Process custom CSS with responsive breakpoints
- */
-const processCustomCSS = (customCSS, selector) => {
-	if (!customCSS || !selector) return "";
-
-	// Replace "selector" with the actual selector
-	let blockCustomCSS = customCSS.replace(/selector/g, `.${selector}`);
-
-	// Responsive CSS handling
-	// @mobile { ... } => @media (max-width: 779px)  { ... }
-	// @tablet { ... } => @media (min-width: 780px) and (max-width: 1024px) { ... }
-	// @desktop { ... } => @media (min-width: 1025px) { ... }
-	blockCustomCSS = blockCustomCSS
-		.replace(/@mobile\s*{([^}]*)}/g, "@media (max-width: 779px) {$1}")
-		.replace(
-			/@tablet\s*{([^}]*)}/g,
-			"@media (min-width: 780px) and (max-width: 1024px) {$1}",
-		)
-		.replace(/@desktop\s*{([^}]*)}/g, "@media (min-width: 1025px) {$1}");
-
-	return blockCustomCSS;
-};
-
-/**
  * Register Additional CSS attributes
  */
 addFilter(
@@ -150,7 +125,6 @@ export const AdditionalCSS = ({ name, attributes, setAttributes }) => {
 		useBackgroundBlur,
 		useOpacity,
 		useOverflow,
-		useCustomCSS,
 	} = useSelect((select) => {
 		const { get } = select("core/preferences");
 		return {
@@ -160,7 +134,6 @@ export const AdditionalCSS = ({ name, attributes, setAttributes }) => {
 				get("blocklayouts/preferences", "cssBackgroundBlur") ?? true,
 			useOpacity: get("blocklayouts/preferences", "cssOpacity") ?? true,
 			useOverflow: get("blocklayouts/preferences", "cssOverflow") ?? true,
-			useCustomCSS: get("blocklayouts/preferences", "cssCustomCSS") ?? true,
 		};
 	}, []);
 
@@ -233,13 +206,6 @@ export const AdditionalCSS = ({ name, attributes, setAttributes }) => {
 						additionalCSS={additionalCSS}
 					/>
 				)}
-
-				{useCustomCSS && (
-					<CustomCSS
-						setAttributes={setAttributes}
-						additionalCSS={additionalCSS}
-					/>
-				)}
 			</ToolsPanel>
 		</InspectorControls>
 	);
@@ -255,7 +221,9 @@ addFilter(
 		const { additionalCSS = {} } = attributes;
 		const { position, overflowHidden, selector } = additionalCSS;
 
-		// Generate classes
+		// Generate classes. The `selector` class is retained for backward
+		// compatibility with content created by the removed Custom CSS feature,
+		// so existing blocks do not trigger block validation errors.
 		extraProps.className = classnames(extraProps.className, {
 			[`position-${position}`]: position,
 			"overflow-hidden": overflowHidden,
@@ -287,9 +255,9 @@ addFilter(
 		return (props) => {
 			const { attributes } = props;
 			const { additionalCSS = {} } = attributes;
-			const { customCSS, selector, position, overflowHidden } = additionalCSS;
+			const { selector, position, overflowHidden } = additionalCSS;
 
-			// Generate classes
+			// Generate classes (selector retained for backward compatibility)
 			const classes = classnames(props?.className, {
 				[`position-${position}`]: position,
 				"overflow-hidden": overflowHidden,
@@ -301,28 +269,6 @@ addFilter(
 			const cleanedInlineStyle = Object.fromEntries(
 				Object.entries(inlineStyle).filter(([, value]) => value !== undefined),
 			);
-
-			// If custom CSS exists, render it
-			if (customCSS && selector) {
-				const blockCustomCSS = processCustomCSS(customCSS, selector);
-
-				return (
-					<>
-						<BlockListBlock
-							{...props}
-							className={classes}
-							wrapperProps={{
-								...props.wrapperProps,
-								style: {
-									...props.wrapperProps?.style,
-									...cleanedInlineStyle,
-								},
-							}}
-						/>
-						<style>{blockCustomCSS}</style>
-					</>
-				);
-			}
 
 			return (
 				<BlockListBlock

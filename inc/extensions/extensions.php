@@ -13,7 +13,6 @@ defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/icon-button.php';
 require_once __DIR__ . '/related-posts.php';
 require_once __DIR__ . '/wrapper-link.php';
-require_once __DIR__ . '/additional-css.php';
 
 /**
  * Add router region data attribute to query block

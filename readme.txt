@@ -30,7 +30,6 @@ Custom blocks, enhanced core blocks, and pre-designed patterns to build WordPres
 
 * **Color Controls** - Enhanced color management with hover effects
 * **Effects Controls** - Animation, transforms, and visual effects
-* **Custom CSS** - Add custom CSS with responsive breakpoints (@mobile, @tablet, @desktop)
 * **Link Controls** - Add link functionality to core/group block
 * **Icon Button** - Enable icon selection and positioning for core/button block
 * **Masonry** - Transform gallery and group (grid) blocks into beautiful masonry layouts
@@ -64,7 +63,6 @@ blocklayouts includes access to our [pattern library](https://blocklayouts.com/p
 
 * **Quick Pattern Insertion** - Find and insert patterns in seconds, not minutes
 * **Block Extensions** - Enhance existing blocks without learning new interfaces
-* **Custom CSS Support** - Advanced styling without leaving the editor
 
 == Privacy ==
 
@@ -96,9 +94,8 @@ These services are provided by Blocklayouts. By using them you agree to the Bloc
 1. Browse our collection of free and premium block patterns to speed up your website building process.
 2. Upgrade button blocks with icon integration for more engaging and professional-looking call-to-action elements.
 3. Add stunning animations and visual effects to any block with our comprehensive effects controls.
-4. Write advanced custom CSS with responsive breakpoint syntax for mobile-optimized designs.
-5. Browse our extensive icon collection with search tools and organized categories for efficient icon selection.
-6. Create and customize icon blocks with full control over size, color, styling, and positioning.
+4. Browse our extensive icon collection with search tools and organized categories for efficient icon selection.
+5. Create and customize icon blocks with full control over size, color, styling, and positioning.
 
 == Installation ==
 
@@ -127,7 +124,7 @@ Blocklayouts is specifically designed for the Gutenberg block editor. While it m
 
 = Do I need coding knowledge to use this plugin? =
 
-Not at all! Blocklayouts is designed for users of all skill levels. However, the Custom CSS feature allows advanced users to add their own styling when needed.
+Not at all! Blocklayouts is designed for users of all skill levels.
 
 = Is there support available? =
 

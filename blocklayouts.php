@@ -87,14 +87,14 @@ function blocklayouts_enqueue_editor_assets() {
 	wp_enqueue_style(
 		'blocklayouts-core-extensions-editor-styles',
 		BLOCKLAYOUTS_PLUGIN_URL . 'build/index.css',
-		array( 'wp-codemirror' ),
+		array(),
 		BLOCKLAYOUTS_VERSION
 	);
 
 	wp_enqueue_script(
 		'blocklayouts-library-editor',
 		BLOCKLAYOUTS_PLUGIN_URL . 'build/index.js',
-		array_merge( $asset_file['dependencies'], array( 'wp-codemirror' ) ),
+		$asset_file['dependencies'],
 		$asset_file['version'],
 		false
 	);
