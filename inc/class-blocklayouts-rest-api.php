@@ -66,6 +66,26 @@ class Blocklayouts_REST_API {
 
 		register_rest_route(
 			'blocklayouts/v1',
+			'/patterns/categories',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'rest_get_patterns_categories' ),
+				'permission_callback' => array( $this, 'check_editor_permission' ),
+			)
+		);
+
+		register_rest_route(
+			'blocklayouts/v1',
+			'/page-templates/categories',
+			array(
+				'methods'             => 'GET',
+				'callback'            => array( $this, 'rest_get_page_templates_categories' ),
+				'permission_callback' => array( $this, 'check_editor_permission' ),
+			)
+		);
+
+		register_rest_route(
+			'blocklayouts/v1',
 			'/industries',
 			array(
 				'methods'             => 'GET',
@@ -209,6 +229,40 @@ class Blocklayouts_REST_API {
 		return rest_ensure_response( $response );
 	}
 
+
+	public function rest_get_patterns_categories( $request ) {
+		return $this->get_categories_by_post_type( 'component' );
+	}
+
+	public function rest_get_page_templates_categories( $request ) {
+		return $this->get_categories_by_post_type( 'page-template' );
+	}
+
+	/**
+	 * Proxy category listing for a given remote post type, with caching.
+	 *
+	 * @param string $post_type Remote post type ('component' or 'page-template').
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	private function get_categories_by_post_type( string $post_type ) {
+		$args      = array( 'post_type' => $post_type );
+		$cache_key = $this->get_cache_key( 'categories', $args );
+
+		$cached_data = $this->get_cached_data( $cache_key );
+		if ( $cached_data !== false ) {
+			return rest_ensure_response( $cached_data );
+		}
+
+		$response = Blocklayouts_Api::get_instance()->get_categories( $args );
+
+		if ( is_wp_error( $response ) ) {
+			return $response;
+		}
+
+		$this->set_cached_data( $cache_key, $response );
+
+		return rest_ensure_response( $response );
+	}
 
 	public function rest_get_categories( $request ) {
 		$params = $request->get_params();
