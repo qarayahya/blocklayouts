@@ -137,6 +137,22 @@ class Blocklayouts_REST_API {
 			)
 		);
 
+		register_rest_route(
+			'blocklayouts/v1',
+			'/license',
+			array(
+				'methods'             => 'POST',
+				'callback'            => array( $this, 'rest_save_license' ),
+				'permission_callback' => array( $this, 'check_admin_permission' ),
+				'args'                => array(
+					'nonce' => array(
+						'required'          => true,
+						'validate_callback' => array( $this, 'validate_nonce' ),
+					),
+				),
+			)
+		);
+
 		// Blocks preferences endpoints
 		register_rest_route(
 			'blocklayouts/v1',
@@ -389,6 +405,26 @@ class Blocklayouts_REST_API {
 				'error' => ! empty( $response['error'] ) ? $response['error'] : 'Failed to remove license information. Please try again or contact support.',
 			)
 		);
+	}
+
+	/**
+	 * Save the license record (used by the editor and dashboard account dropdown).
+	 *
+	 * The client persists the "license" entity via saveEntityRecord(), which POSTs to
+	 * this route. The desired operation is provided in the payload's "action" field and
+	 * is delegated to the matching activate/deactivate handler.
+	 *
+	 * @param \WP_REST_Request $request Request object.
+	 * @return \WP_REST_Response|\WP_Error
+	 */
+	public function rest_save_license( $request ) {
+		$action = sanitize_text_field( (string) $request->get_param( 'action' ) );
+
+		if ( 'deactivate' === $action ) {
+			return $this->rest_deactivate_license( $request );
+		}
+
+		return $this->rest_activate_license( $request );
 	}
 
 	/**
