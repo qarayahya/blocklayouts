@@ -480,29 +480,41 @@ class Blocklayouts_REST_API {
 			return new \WP_Error( 'invalid_blocks', 'Blocks must be an array.', array( 'status' => 400 ) );
 		}
 
-		// Get current settings.
+		// Get current settings and the set of real, known blocks.
 		$blocklayouts_settings = get_option( 'blocklayouts_settings', array() );
+		$known_blocks          = Blocks_Registrar::get_blocks();
 
-		// Initialize blocks array if it doesn't exist.
-		if ( ! isset( $blocklayouts_settings['blocks'] ) ) {
-			$blocklayouts_settings['blocks'] = array();
-		}
-
-		// Only update the active status for each block. Supports both an associative
-		// map ( 'blocklayouts/icon' => array( 'active' => ... ) ) and an array of block
-		// objects ( array( 'name' => 'blocklayouts/icon', 'active' => ... ) ).
+		// Rebuild the saved block preferences from scratch, keeping only real blocks.
+		// The dashboard always sends the full list, so this also purges any stale or
+		// malformed keys (e.g. numeric indexes) that could create phantom blocks.
+		$saved_blocks = array();
 		foreach ( $blocks as $key => $block_data ) {
 			if ( ! is_array( $block_data ) ) {
 				continue;
 			}
 
-			$block_name           = isset( $block_data['name'] ) ? $block_data['name'] : $key;
-			$sanitized_block_name = sanitize_text_field( $block_name );
+			// Accept array-of-objects ( 'name', or legacy 'id' ) and associative maps.
+			if ( isset( $block_data['name'] ) ) {
+				$block_name = $block_data['name'];
+			} elseif ( isset( $block_data['id'] ) ) {
+				$block_name = $block_data['id'];
+			} else {
+				$block_name = $key;
+			}
 
-			$blocklayouts_settings['blocks'][ $sanitized_block_name ] = array(
+			$block_name = sanitize_text_field( (string) $block_name );
+
+			// Ignore anything that isn't a real registered block.
+			if ( ! isset( $known_blocks[ $block_name ] ) ) {
+				continue;
+			}
+
+			$saved_blocks[ $block_name ] = array(
 				'active' => isset( $block_data['active'] ) ? (bool) $block_data['active'] : true,
 			);
 		}
+
+		$blocklayouts_settings['blocks'] = $saved_blocks;
 
 		// Save updated settings. update_option() returns false when the value is
 		// unchanged, so treat a matching stored value as success too.
@@ -513,9 +525,9 @@ class Blocklayouts_REST_API {
 			$all_blocks = Blocks_Registrar::get_blocks();
 
 			$blocks_array = array();
-			foreach ( $all_blocks as $block_id => $block_data ) {
+			foreach ( $all_blocks as $block_name => $block_data ) {
 				$blocks_array[] = array_merge(
-					array( 'id' => $block_id ),
+					array( 'name' => $block_name ),
 					$block_data
 				);
 			}

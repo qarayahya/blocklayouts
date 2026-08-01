@@ -78,15 +78,11 @@ class Blocks_Registrar {
 		// Start with default blocks.
 		$merged_blocks = self::$blocks;
 
-		// Merge database settings with defaults.
-		// Settings from database will override defaults.
+		// Merge saved settings into known default blocks only. Unknown keys are
+		// ignored so stale or malformed saved data can never create phantom blocks.
 		foreach ( $settings_blocks as $block_name => $block_settings ) {
-			if ( isset( $merged_blocks[ $block_name ] ) ) {
-				// Merge settings for existing block.
+			if ( isset( $merged_blocks[ $block_name ] ) && is_array( $block_settings ) ) {
 				$merged_blocks[ $block_name ] = wp_parse_args( $block_settings, $merged_blocks[ $block_name ] );
-			} else {
-				// Add new block from database settings.
-				$merged_blocks[ $block_name ] = $block_settings;
 			}
 		}
 
