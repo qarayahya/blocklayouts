@@ -42,13 +42,13 @@ class Blocks_Registrar {
 		'blocklayouts/infinite-scroll'   => array(
 			'title'       => 'Infinite Scroll',
 			'description' => 'Load more posts automatically on scroll or with a button.',
-			'premium'     => true,
+			'premium'     => false,
 			'active'      => true,
 		),
 		'blocklayouts/table-of-contents' => array(
 			'title'       => 'Table of Contents',
 			'description' => 'Display a table of contents based on headings in your content.',
-			'premium'     => true,
+			'premium'     => false,
 			'active'      => true,
 		),
 	);
