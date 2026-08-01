@@ -135,6 +135,7 @@ For premium support options, please visit [our website](https://blocklayouts.com
 
 = 0.2.1 - 2026-08-01 =
 
+- Removed: Custom CSS block controls
 - Fixed: Pattern preview thumbnail now displays at full width with auto height and centered
 
 = 0.2.0 - 2026-08-01 =
