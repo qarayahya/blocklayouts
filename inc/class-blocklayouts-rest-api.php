@@ -171,18 +171,6 @@ class Blocklayouts_REST_API {
 				'methods'             => 'POST',
 				'callback'            => array( $this, 'rest_update_blocks' ),
 				'permission_callback' => array( $this, 'check_admin_permission' ),
-				'args'                => array(
-					'nonce'  => array(
-						'required'          => true,
-						'validate_callback' => array( $this, 'validate_nonce' ),
-					),
-					'blocks' => array(
-						'required'          => true,
-						'validate_callback' => function ( $param ) {
-							return is_array( $param );
-						},
-					),
-				),
 			)
 		);
 	}
@@ -479,6 +467,15 @@ class Blocklayouts_REST_API {
 	public function rest_update_blocks( $request ) {
 		$blocks = $request->get_param( 'blocks' );
 
+		// The dashboard saves the "blocks" entity as a plain array of block objects,
+		// so fall back to the raw JSON body when there is no explicit "blocks" param.
+		if ( ! is_array( $blocks ) ) {
+			$body = $request->get_json_params();
+			if ( is_array( $body ) ) {
+				$blocks = $body;
+			}
+		}
+
 		if ( ! is_array( $blocks ) ) {
 			return new \WP_Error( 'invalid_blocks', 'Blocks must be an array.', array( 'status' => 400 ) );
 		}
@@ -491,20 +488,27 @@ class Blocklayouts_REST_API {
 			$blocklayouts_settings['blocks'] = array();
 		}
 
-		// Only update the active status for each block.
-		foreach ( $blocks as $block_name => $block_data ) {
+		// Only update the active status for each block. Supports both an associative
+		// map ( 'blocklayouts/icon' => array( 'active' => ... ) ) and an array of block
+		// objects ( array( 'name' => 'blocklayouts/icon', 'active' => ... ) ).
+		foreach ( $blocks as $key => $block_data ) {
+			if ( ! is_array( $block_data ) ) {
+				continue;
+			}
+
+			$block_name           = isset( $block_data['name'] ) ? $block_data['name'] : $key;
 			$sanitized_block_name = sanitize_text_field( $block_name );
 
-			// Only store the active status.
 			$blocklayouts_settings['blocks'][ $sanitized_block_name ] = array(
 				'active' => isset( $block_data['active'] ) ? (bool) $block_data['active'] : true,
 			);
 		}
 
-		// Save updated settings.
+		// Save updated settings. update_option() returns false when the value is
+		// unchanged, so treat a matching stored value as success too.
 		$result = update_option( 'blocklayouts_settings', $blocklayouts_settings );
 
-		if ( $result ) {
+		if ( $result || get_option( 'blocklayouts_settings', array() ) === $blocklayouts_settings ) {
 			// Return the merged blocks with all data.
 			$all_blocks = Blocks_Registrar::get_blocks();
 
