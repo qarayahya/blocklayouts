@@ -73,6 +73,24 @@ We only collect the website URL when you activate a license key. This helps us v
 
 By using Blocklayouts and accessing our pattern library, you agree to our [privacy policy](https://blocklayouts.com/privacy-policy/) and [terms of service](https://blocklayouts.com/terms-of-service/).
 
+== External services ==
+
+This plugin connects to the Blocklayouts pattern library service to provide block patterns, page templates, and their categories inside the editor, and to manage an optional premium license. Every custom block and block extension included in the plugin works fully without these requests; only the online pattern/template library and premium-license features rely on them.
+
+**Blocklayouts Pattern Library API** (https://patterns.blocklayouts.com)
+
+* What it is used for: fetching block patterns, page templates, and their categories for display in the editor's pattern library.
+* When requests are sent: only when a logged-in user with editing permissions opens the Blocklayouts pattern library or browses its tabs and categories.
+* What data is sent: your site URL (as the HTTP Referer header). No post content, user data, or other personal information is transmitted.
+
+**Blocklayouts Licensing API** (https://patterns.blocklayouts.com)
+
+* What it is used for: activating, validating, and deactivating an optional premium license that unlocks access to premium patterns and page templates.
+* When requests are sent: only when an administrator activates or deactivates a license key, and periodically (via a scheduled task) to re-validate a license key you have entered. No requests are made if you never enter a license key.
+* What data is sent: the license key you enter and your site URL and site name (used together as the license instance identifier).
+
+These services are provided by Blocklayouts. By using them you agree to the Blocklayouts [terms of service](https://blocklayouts.com/terms-of-service/) and [privacy policy](https://blocklayouts.com/privacy-policy/).
+
 == Screenshots ==
 
 1. Browse our collection of free and premium block patterns to speed up your website building process.
