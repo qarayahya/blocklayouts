@@ -73,7 +73,8 @@ if ( 'archive' === $blocklayouts_filter_mode ) {
 	$blocklayouts_filter_param   = \Blocklayouts\bl_category_filter_param( $blocklayouts_filter_query_id, $blocklayouts_filter_taxonomy );
 	$blocklayouts_filter_page    = 'query-' . $blocklayouts_filter_query_id . '-page';
 	$blocklayouts_filter_current = \Blocklayouts\bl_category_filter_get_selected( $blocklayouts_filter_query_id, $blocklayouts_filter_taxonomy );
-	$blocklayouts_filter_all_url = remove_query_arg( array( $blocklayouts_filter_param, $blocklayouts_filter_page ) );
+	$blocklayouts_filter_reset   = array( $blocklayouts_filter_page, 'query-' . $blocklayouts_filter_query_id . '-loaded' );
+	$blocklayouts_filter_all_url = remove_query_arg( array_merge( array( $blocklayouts_filter_param ), $blocklayouts_filter_reset ) );
 }
 
 // Build the list of options.
@@ -103,7 +104,7 @@ foreach ( $blocklayouts_filter_terms as $blocklayouts_filter_term ) {
 		$blocklayouts_filter_url = add_query_arg(
 			$blocklayouts_filter_param,
 			$blocklayouts_filter_term->slug,
-			remove_query_arg( $blocklayouts_filter_page )
+			remove_query_arg( $blocklayouts_filter_reset )
 		);
 	}
 

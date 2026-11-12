@@ -41,6 +41,8 @@ const buildUrl = (context, slug) => {
 		url.searchParams.delete(context.param);
 	}
 	url.searchParams.delete(context.pageParam);
+	// Start over from the first page after "Load more" (infinite scroll block).
+	url.searchParams.delete(context.pageParam.replace(/-page$/, "-loaded"));
 
 	return url.href;
 };
