@@ -24,6 +24,7 @@ Custom blocks, enhanced core blocks, and pre-designed patterns to build WordPres
 * **Table of Contents** - Automatically generate a navigable table of contents from headings in your content
 * **Infinite Scroll** - Automatically load more posts as you scroll
 * **Related Posts** - Display posts related to the current post based on categories, tags, or custom taxonomies
+* **Category Filter** - Filter a Query Loop by any taxonomy, with instant results and Pills or Carousel styles
 * **More blocks coming soon**: Slider, Content Toggle, and many more!
 
 = Block Extensions & Enhancements =

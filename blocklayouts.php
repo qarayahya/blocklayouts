@@ -31,6 +31,7 @@ define( 'BLOCKLAYOUTS_VERSION', '0.2.1' );
  */
 require_once __DIR__ . '/inc/class-blocklayouts-license.php';
 require_once __DIR__ . '/inc/blocks/class-blocklayouts-block-registry.php';
+require_once __DIR__ . '/inc/blocks/category-filter.php';
 require_once __DIR__ . '/inc/extensions/extensions.php';
 require_once __DIR__ . '/inc/class-blocklayouts-api.php';
 require_once __DIR__ . '/inc/class-blocklayouts-rest-api.php';
