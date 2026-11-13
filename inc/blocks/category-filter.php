@@ -12,7 +12,7 @@
  * does not depend on the order in which blocks are rendered.
  *
  * @package Blocklayouts
- * @since 0.3.0
+ * @since 0.2.2
  */
 
 namespace Blocklayouts;

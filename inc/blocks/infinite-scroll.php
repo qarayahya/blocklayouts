@@ -14,7 +14,7 @@
  * Queries that inherit the template query use `bl-loaded=N` instead.
  *
  * @package Blocklayouts
- * @since 0.3.0
+ * @since 0.2.2
  */
 
 namespace Blocklayouts;
